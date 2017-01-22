@@ -1,11 +1,17 @@
-<h1><%= @track["name"] %></h1>
-<div>
-  <img onClick='location.reload()' src="<%= @track["image"].last["#text"] %>" /><br/>
-  <span><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></span>
+<div id="content">
+  <div id="track_1">
+    <a class="winner_link" href=""><i class="fa fa-trophy winner_icon" aria-hidden="true"></i></a>
+    <h1><%= @track_1["name"] %></h1>
+    <img src="<%= @track_1["image"].last["#text"] %>" />
+    <h2><%= @track_1["artist"]["name"] %></h2>
+    <a href="<%= @track_1["url"] %>" target="_blank">Listen on Last.fm</a>
+  </div>
+
+  <div id="track_2">
+    <a class="winner_link" href=""><i class="fa fa-trophy winner_icon" aria-hidden="true"></i></a>
+    <h1><%= @track_2["name"] %></h1>
+    <img src="<%= @track_2["image"].last["#text"] %>" />
+    <h2><%= @track_2["artist"]["name"] %></h2>
+    <a href="<%= @track_2["url"] %>" target="_blank">Listen on Last.fm</a>
+  </div>
 </div>
-
-<h2><%= @track["artist"]["name"] %></h2>
-
-<a href="<%= @track["url"] %>" target="_blank">Listen on Last.fm</a><br/>
-<script>
-</script>
