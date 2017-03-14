@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
-  root "tracks#index"
-  resources :tracks, only: [:index]
+  root "songs#index"
+
+  resources :songs
+
+  get "/api/:request", to: "songs_api#api"
 end
