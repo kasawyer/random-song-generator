@@ -47,14 +47,13 @@ class Song extends Component {
   render() {
     let song, name, image, artist, url;
     let imageKey = '#text';
-    if (this.state.numberSongs) {
+    // if (this.state.numberSongs) {
       song = this.state.songs[this.state.selectedSongIndex];
       name = <h1> { song.name } </h1>;
       image = <img src={song.image[song.image.length - 1][imageKey]}/>;
       artist = <h2> { song.artist.name } </h2>;
       url = <a href={song.url} target="_blank">Listen on Last.fm</a>;
-    }
-    debugger;
+    // }
 
     return (
       <div className="small-12 columns callout primary center">
