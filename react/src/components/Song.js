@@ -21,9 +21,10 @@ class Song extends Component {
   }
 
   componentDidMount () {
-    fetch(`http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=7005d0482caf069930f4fb05cbc03ea3&format=json`)
+    fetch(`/api/v1/songs.json`)
       .then(response => {
         if (response.ok) {
+          debugger;
           return response;
         } else {
           let errorMessage = `${response.status}, (${response.statusText})`;
@@ -47,13 +48,13 @@ class Song extends Component {
   render() {
     let song, name, image, artist, url;
     let imageKey = '#text';
-    // if (this.state.numberSongs) {
+    if (this.state.numberSongs) {
       song = this.state.songs[this.state.selectedSongIndex];
       name = <h1> { song.name } </h1>;
       image = <img src={song.image[song.image.length - 1][imageKey]}/>;
       artist = <h2> { song.artist.name } </h2>;
       url = <a href={song.url} target="_blank">Listen on Last.fm</a>;
-    // }
+    }
 
     return (
       <div className="small-12 columns callout primary center">
