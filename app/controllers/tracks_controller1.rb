@@ -3,7 +3,7 @@ require 'json'
 
 class TracksController < ApplicationController
   def index
-    @url = "http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=#{ENV["LAST_FM_KEY"]}&format=json&limit=100"
+    @url = "http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=#{ENV["LAST_FM_KEY"]}&format=json&limit=150"
     @json = Net::HTTP.get(URI.parse(@url))
     @parse = JSON.parse(@json)
 
