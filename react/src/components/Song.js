@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import NewSongButton from './NewSongButton';
 
+const API_KEY=process.env.LAST_FM_KEY;
+const API_URL = 'http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&format=json&limit=100&api_key=';
+const REQUEST_URL = API_URL + API_KEY;
+
 class Song extends Component {
   constructor(props) {
     super(props);
@@ -21,10 +25,9 @@ class Song extends Component {
   }
 
   componentDidMount () {
-    fetch(`/api/v1/songs.json`)
+    fetch(REQUEST_URL)
       .then(response => {
         if (response.ok) {
-          debugger;
           return response;
         } else {
           let errorMessage = `${response.status}, (${response.statusText})`;

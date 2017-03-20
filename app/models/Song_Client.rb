@@ -10,3 +10,5 @@ class SongClient
   }
   format :json
 end
+
+return SongClient

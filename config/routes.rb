@@ -6,4 +6,6 @@ Rails.application.routes.draw do
       resources :songs, only: [:index]
     end
   end
+
+  get "api/v1/songs", to: "songs_api#api"
 end
